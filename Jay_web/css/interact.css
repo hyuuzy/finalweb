@@ -1,0 +1,80 @@
+.fans{
+text-align: left;
+}
+/* 整個留言區容器樣式 */
+.comment-section {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 留言表單樣式 */
+.comment-form {
+    flex: 1;
+    background-color: #fff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comment-form h3 {
+    margin-bottom: 15px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5c604f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #383a3b;
+}
+
+/* 留言列表樣式 */
+.comment-list {
+    flex: 1;
+    background-color: #d1cdcd;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 240px;
+}
+
+.comment-list h3 {
+    margin-bottom: 15px;
+    color: #5c604f;
+}
+
+.comment {
+    background-color: #3b3b3b;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment p {
+    margin: 0;
+    font-size: 14px;
+}

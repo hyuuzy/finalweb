@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href=" https://necolas.github.io/normalize.css/">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/interact.css">
+  <title>Jay Chou</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="jay">
+      <h1>Jay Chou</h1>
+    </div>
+    <div class="icon button">
+      <a class="language" href="#"><img src="images/language.png" alt="language"></a>
+      <a class="profile" href="#"><img src="images/profile.png" alt="login"></a>
+    </div>
+
+  </header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="album.html" class="1">專輯系列</a></li>
+      <li><a href="interact.html" class="2">互動專區</a></li>
+      <li><a href="fashion.html" class="3">時尚生活</a></li>
+      <li><a href="concert.html" class="4">演唱會資訊</a></li>
+    </ul>
+  </nav>
+  <!-- interact -->
+  <!-- <h3 class="fans">粉絲互動區</h3> -->
+
+  <div class="comment-section">
+    <!-- 留言表單 -->
+    <div class="comment-form">
+      <h3>粉絲留言版</h3>
+      <input type="text" id="username" placeholder="請輸入名稱">
+      <textarea id="message" placeholder="請在此輸入你的留言..." rows="3"></textarea>
+      <button id="submit-btn">送出</button>
+    </div>
+
+    <!-- 其他人留言列表 -->
+    <div class="comment-list">
+      <h3>周杰倫粉絲留言..</h3>
+      <div id="comments-display"></div>
+    </div>
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

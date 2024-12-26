@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1C1C1C;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C1C1C;
+    padding: 20px;
+    height: 117px; /* 固定高度 */
+    position: relative;
+    margin-top: 10px;
+}
+
+.jay {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    flex: 1;
+    margin-left: 70px;
+}
+
+.icon button {
+    display: flex;
+}
+
+.language img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+}
+
+/* .language{
+    margin-right: 20px;
+} */
+.navbar {
+    background-color: #8A8885;
+    width: 100%;
+    height: 100px;
+    padding: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    display: inline;
+    margin-top: 35px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 24px;
+}
+
+.navbar li a {
+    color: #F7FBDA;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    font-size: 35px;
+    color: #5f5429;
+    cursor: pointer;
+}
+/* --- 漢堡選單樣式 --- */
+.hamburger {
+    display: none; /* 預設隱藏，桌面不顯示 */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute; /* 固定在左側 */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* --- 手機模式 --- */
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }  
+    .navbar {
+        display: none; /* 手機版隱藏導覽列 */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .navbar.active {
+        display: flex; /* 漢堡選單開啟時顯示導覽列 */
+        
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* 手機版顯示漢堡選單 */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        position: fixed; /* 使用 fixed，確保它固定在螢幕的左上角 */
+        left: 40px; /* 離左邊 20px */
+        top: 40px; /* 離上方 20px，確保位於標題下方 */
+        z-index: 1000; /* 確保漢堡選單在其他內容之上 */
+    }
+    .hamburger span {
+        display: block;
+        background-color: #fff;
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+    }
+}
+
+.intro {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro img {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 10px
+}
+
+.next-arrow {
+    font-size: 2em;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    margin-top: 20px;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.nextintro {
+    display: none;
+    /* background-color: #1C1C1C; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加背景圖的透明度效果 */
+.nextintro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/background.JPG');
+    /* 替換為你的背景圖路徑 */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    /* 設定背景透明度為 50% */
+    z-index: 0;
+    /* 確保背景在文字下方 */
+}
+
+.nextintro p {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    line-height: 2.5;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    z-index: 1;
+    /* 確保文字在背景圖片之上 */
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around; /* 左右分開布局 */
+    gap: 20px; /* 左右間距 */
+    align-items: flex-start; 
+    margin-bottom: 30px;
+    /* padding: 20px; */
+  }
+h2 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 32px;
+    color: #5c604f;
+}
+.timeline {
+    position: relative;
+    max-width: 50%;
+    margin: 0 auto;
+    /* padding: 20px; */
+    flex: 1; /* 左側占據 1 份空間 */
+}
+
+.timeline-container {
+    position: relative;
+    padding: 12px;
+    border-left: 4px solid #909090;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: #909090;
+    border-radius: 50%;
+}
+.timeline-date {
+    font-weight: bold;
+    color: #909090;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* 添加放大效果的過渡 */
+    max-width: 90%;
+    /* 限制內容框的最大寬度 */
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.timeline-content img {
+    /* max-width: 80%; 縮小圖片大小 */
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.timeline-content .text {
+    flex: 1;
+    /* 讓文字區域自動填滿剩餘空間 */
+    color: #555;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.timeline-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.timeline-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.timeline-item:hover .timeline-content {
+    background-color: cornsilk;
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+}
+
+.specials {
+    flex: 1; /* 右側占據 1 份空間 */
+}
+.specials h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 32px;
+    color: #5c604f;
+}
+.albumgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* margin-top: 10px; */
+    /* display:flex;
+    justify-content: space-around; */
+    gap: 25px;
+    justify-items: center;
+}
+.albums img{
+    display: flex;
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.albums img:hover{
+    transform: scale(1.1);
+}
+.footer{
+    background-color: #d0d0d0;
+    width: 100%;
+    height:60px;
+    padding: 1px;
+}

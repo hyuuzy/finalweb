@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1C1C1C;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C1C1C;
+    padding: 20px;
+    height: 117px; /* 固定高度 */
+    position: relative;
+    margin-top: 10px;
+}
+
+.jay {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    flex: 1;
+    margin-left: 70px;
+}
+
+.icon button {
+    display: flex;
+}
+
+.language img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+}
+
+/* .language{
+    margin-right: 20px;
+} */
+.navbar {
+    background-color: #8A8885;
+    width: 100%;
+    height: 100px;
+    padding: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    display: inline;
+    margin-top: 35px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 24px;
+}
+
+.navbar li a {
+    color: #F7FBDA;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    font-size: 35px;
+    color: #5f5429;
+    cursor: pointer;
+}
+/* --- 漢堡選單樣式 --- */
+.hamburger {
+    display: none; /* 預設隱藏，桌面不顯示 */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute; /* 固定在左側 */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* --- 手機模式 --- */
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }  
+    .navbar {
+        display: none; /* 手機版隱藏導覽列 */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .navbar.active {
+        display: flex; /* 漢堡選單開啟時顯示導覽列 */
+        
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* 手機版顯示漢堡選單 */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        position: fixed; /* 使用 fixed，確保它固定在螢幕的左上角 */
+        left: 40px; /* 離左邊 20px */
+        top: 40px; /* 離上方 20px，確保位於標題下方 */
+        z-index: 1000; /* 確保漢堡選單在其他內容之上 */
+    }
+    .hamburger span {
+        display: block;
+        background-color: #fff;
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+    }
+}

@@ -1,0 +1,87 @@
+  .song-list {
+    list-style: none; /* 移除預設的項目符號 */
+    padding: 5% 10%;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .song-list li {
+    display: flex; /* 使用 Flexbox 進行佈局 */
+    align-items: center; /* 垂直置中 */
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* 分隔線 */
+  }
+  
+  /* .song-list li:hover {
+    background-color: #f0f0f0; /* 滑鼠移到項目上的背景色 
+  }*/
+
+  .number {
+    width: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    margin-left: 10px;
+    flex-grow: 1; /* 標題彈性增長以佔據剩餘空間 */
+  }
+  
+  .artist {
+    margin-left: 10px;
+    color: #888;
+    font-size: 0.9em;
+  }
+  
+  .time {
+    margin-left: 20px;
+  }
+  
+  .play-icon {
+    margin-left: 2%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: #00a0e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .timeAndplay {
+    display: flex; /* 確保時間和播放按鈕在同一行 */
+    align-items: center;
+    gap: 10px; /*設定間距*/
+  }
+
+  .music-player {
+    display: flex; /* 讓 icon 和其他元素水平排列 */
+    align-items: center; /* 垂直置中 */
+}
+
+/* 隱藏預設的 audio 控制項 */
+audio {
+  display: none;
+}
+
+  /* 行動裝置優化 */
+  @media (max-width: 600px) {
+    .song-list li {
+      flex-direction: column; /* 改為垂直排列 */
+      align-items: flex-start; /* 左對齊 */
+    }
+  
+    .title, .artist, .time{
+      margin-left: 0;
+      margin-top: 5px; /* 增加間距 */
+    }
+    .timeAndplay {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+    .play-icon {
+      order: 1; /* 將播放按鈕移到最後 */
+      margin-left: auto; /* 將播放按鈕推到右側 */
+      width: auto;
+    }
+  }
